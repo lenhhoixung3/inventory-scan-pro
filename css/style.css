@@ -64,3 +64,26 @@ padding:10px;
 border-radius:8px;
 
 }
+#reader {
+
+position: relative;
+
+}
+
+#reader::after{
+
+content:"";
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+width:260px;
+height:160px;
+
+border:4px solid red;
+
+transform:translate(-50%,-50%);
+
+}
