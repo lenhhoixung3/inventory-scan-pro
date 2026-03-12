@@ -1,14 +1,14 @@
-let scanner
+let html5QrCode
 
 function startScanner(){
 
-scanner = new Html5Qrcode("reader")
+html5QrCode = new Html5Qrcode("reader")
 
-scanner.start(
+html5QrCode.start(
 { facingMode: "environment" },
 {
 fps: 30,
-qrbox: { width: 280, height: 180 }
+qrbox: { width: 250, height: 150 }
 },
 onScanSuccess
 )
@@ -17,14 +17,9 @@ onScanSuccess
 
 function onScanSuccess(barcode){
 
-document.getElementById("scanResult").innerHTML=
+document.getElementById("scanResult").innerHTML =
+"<div class='scan-box'>Barcode: "+barcode+"</div>"
 
-`
-<div class="scan-box">
-Barcode: ${barcode}
-</div>
-`
-
-searchProduct(barcode)
+addProduct(barcode)
 
 }
