@@ -50,3 +50,18 @@ list.appendChild(div)
 })
 
 }
+function searchProduct(barcode){
+
+let found = products.find(p => p.barcode === barcode)
+
+if(found){
+
+alert("Product: "+found.name)
+
+}else{
+
+addProduct(barcode)
+
+}
+
+}
