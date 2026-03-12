@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Inventory Scanner PRO</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📦 Inventory Scanner</h1>
+
+<div class="lang">
+
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('vi')">VN</button>
+
+</div>
+
+</header>
+
+<nav>
+
+<button onclick="showPage('dashboard')">Dashboard</button>
+<button onclick="showPage('inventory')">Inventory</button>
+<button onclick="showPage('scanner')">Scanner</button>
+
+</nav>
+
+<section id="dashboardPage">
+
+<h2>Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+Total Products
+<h1 id="totalProducts">0</h1>
+</div>
+
+<div class="card">
+Low Stock
+<h1 id="lowStock">0</h1>
+</div>
+
+</div>
+
+</section>
+
+<section id="inventoryPage" style="display:none">
+
+<h2>Inventory</h2>
+
+<input id="search" placeholder="Search">
+
+<div id="inventoryList"></div>
+
+</section>
+
+<section id="scannerPage" style="display:none">
+
+<h2>Scanner</h2>
+
+<div id="reader"></div>
+
+<div id="scanResult"></div>
+
+</section>
+
+<script src="js/navigation.js"></script>
+<script src="js/scanner.js"></script>
+<script src="js/language.js"></script>
+<script src="js/inventory.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
