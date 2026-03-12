@@ -1,9 +1,9 @@
 function updateDashboard(){
 
-document.getElementById("totalProducts").innerText=products.length
+document.getElementById("totalProducts").innerText = products.length
 
-let low=products.filter(p=>p.qty<=5)
+let low = products.filter(p => p.qty <= 5)
 
-document.getElementById("lowStock").innerText=low.length
+document.getElementById("lowStock").innerText = low.length
 
 }
