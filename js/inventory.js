@@ -65,3 +65,33 @@ addProduct(barcode)
 }
 
 }
+async function lookupAI(barcode){
+
+const res = await fetch(
+"https://world.openfoodfacts.org/api/v0/product/"+barcode+".json"
+)
+
+const data = await res.json()
+
+if(data.product){
+
+return data.product.product_name
+
+}
+
+}
+async function addProduct(barcode){
+
+let name = await lookupAI(barcode)
+
+products.push({
+
+barcode: barcode,
+name: name || "Unknown product",
+qty: 1
+
+})
+
+renderInventory()
+
+}
